@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="logo">
+       
+    <nav>
+ <div class="logo">
+  <li class="fa-brands fa-github"></li>
+  <h1>GitHup Finder</h1>
+</div>
+<button id="toggleBookmarks"> <li class="fa-solid fa-star"></li> Bookmarks</button>   
+ </nav>
+    </header>
+    <section class="hero">
+        <div class="content">
+            <span class="icon-search">
+    <i class="fa-brands fa-github"></i>
+</span>
+
+            <img src="images/search.png" class="icon">
+
+            <h1>Find <span>GitHub</span> Users</h1>
+            <p>Search for any GitHub username to get started</p>
+
+            <div class="search-box">
+
+                <input type="text" placeholder="Enter GitHub username...">
+                <button>search</button>
+            </div>
+
+        </div>
+    </section>
+    
+     <!-- <section id="laoding" class="hidden">
+        <p> laoding....</p>
+
+    </section>
+    <section id="error" class="hidden">
+        <p>messageError</p>
+ </section> -->
+  <section id="result">
+
+  <div class="profile-card">
+
+    <div class="top">
+      <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="avatar">
+      <div class="user-info">
+        <h2>Linus Torvalds</h2>
+        <p>@torvalds</p>
+      </div>
+    </div>
+
+    <p class="bio">Créateur de Linux et Git</p>
+
+    <div class="stats">
+      <div>
+        <strong>150K</strong>
+        <span>Followers</span>
+      </div>
+      <div>
+        <strong>0</strong>
+        <span>Following</span>
+      </div>
+      <div>
+        <strong>6</strong>
+        <span>Repos</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="https://github.com/torvalds" target="_blank" class="btn-primary">
+        View Profile
+      </a>
+
+      <button id="addBookmark" class="btn-secondary">
+        ⭐ Bookmark
+      </button>
+    </div>
+
+  </div>
+
+</section>
+        
+<!-- <section id="Bookmarks" class="hidden">
+    <h2>Favoris (<span id="count">0</span>)</h2>
+    <div id="listBoomarks"></div>  -->
+
+
+</section> 
+</body>
+</html>
