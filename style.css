@@ -136,106 +136,96 @@ p {
 .search-box button:hover {
     transform: scale(1.1);
 }
-#result {
-  display: flex;
-  justify-content: center;
-  padding: 40px;
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --repo: #334155;
+    --text: #ffffff;
+    --subtext: #94a3b8;
+    --accent: #3b82f6; 
+    --btn: #f59e0b; 
 }
 
-/* CARD */
-.profile-card {
-  background: #0f172a;
-  color: white;
-  width: 380px;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  transition: 0.3s;
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    width: 50%;
 }
 
-.profile-card:hover {
-  transform: translateY(-5px);
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
 }
 
-/* TOP */
-.top {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.profile img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
 }
 
-.top img {
-  width: 80px;
-  border-radius: 50%;
+.info h2 {
+    margin: 0;
 }
 
-.user-info h2 {
-  margin: 0;
-  font-size: 20px;
+.username {
+    color: var(--subtext);
 }
-
-.user-info p {
-  margin: 0;
-  color: #94a3b8;
-}
-
 
 .bio {
-  margin: 15px 0;
-  color: #cbd5f5;
+    margin: 5px 0;
 }
 
 .stats {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-}
-
-.stats div {
-  text-align: center;
-}
-
-.stats strong {
-  display: block;
-  font-size: 18px;
+    display: flex;
+    gap: 30px;
+    margin: 10px 0;
 }
 
 .stats span {
-  font-size: 13px;
-  color: #94a3b8;
+    color: var(--subtext);
+    font-size: 14px;
 }
 
-/* BUTTONS */
-.actions {
-  display: flex;
-  gap: 10px;
+.stats h3 {
+    margin: 0;
+    color: var(--accent);
 }
 
-.btn-primary {
-  flex: 1;
-  background: #2563eb;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-  text-decoration: none;
+.link {
+    color: var(--accent);
+    text-decoration: none;
 }
 
-.btn-secondary {
-  flex: 1;
-  background: #1e293b;
-  color: white;
-  border: 1px solid #334155;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
+.btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: var(--btn);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
 }
 
-/* HOVER */
-.btn-primary:hover {
-  background: #1d4ed8;
+.title {
+    margin-top: 30px;
 }
 
-.btn-secondary:hover {
-  background: #334155;
+.repo {
+    background: var(--repo);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+     width: 50%;
+
+}
+
+.star {
+    color: gold;
 }
