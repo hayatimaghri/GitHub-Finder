@@ -12,18 +12,19 @@
        
     <nav>
  <div class="logo">
-  <li class="fa-brands fa-github"></li>
+  <i class="fa-brands fa-github"></i>
   <h1>GitHup Finder</h1>
 </div>
-<button id="toggleBookmarks"> <li class="fa-solid fa-star"></li> Bookmarks</button>   
+<button id="toggleBookmarks"> <i class="fa-solid fa-star"></i> Bookmarks</button>   
  </nav>
     </header>
-    <section class="hero">
+    <section class="hero" id="welcomeState">
         <div class="content">
             <span class="icon-search">
     <i class="fa-brands fa-github"></i>
 </span>
 
+    
             <img src="images/search.png" class="icon">
 
             <h1>Find <span>GitHub</span> Users</h1>
@@ -31,75 +32,32 @@
 
             <div class="search-box">
 
-                <input type="text" placeholder="Enter GitHub username...">
-                <button>search</button>
+                <input type="text" id="searchInput" placeholder="Enter GitHub username...">
+                <button id="searchBtn">search</button>
             </div>
 
         </div>
     </section>
     
-     <!-- <section id="laoding" class="hidden">
-        <p> laoding....</p>
+      <section id="laodingStatut" class="hidden">
+        
 
     </section>
-    <section id="error" class="hidden">
-        <p>messageError</p>
- </section> -->
- <section id="result">
-  <div class="card">
-    <div class="profile">
-        <img src="https://via.placeholder.com/100" alt="avatar">
-
-        <div class="info">
-            <h2>hayatimaghri</h2>
-            <p class="username">@hayatimaghri</p>
-            <p class="bio">No bio available</p>
-
-            <div class="stats">
-                <div>
-                    <span>Followers</span>
-                    <h3>0</h3>
-                </div>
-                <div>
-                    <span>Following</span>
-                    <h3>0</h3>
-                </div>
-                <div>
-                    <span>Repos</span>
-                    <h3>9</h3>
-                </div>
-            </div>
-
-            <a href="#" class="link">Visit GitHub Profile →</a>
-        </div>
-
-        <button class="btn">★ Bookmark</button>
-    </div>
-</div>
-
-<h2 class="title">Top Repositories</h2>
-
-<div class="repo">
-    <div>
-        <h3>ZABfbs</h3>
-        <p>No description</p>
-    </div>
-    <span class="star">⭐ 0</span>
-</div>
-
-<div class="repo">
-    <div>
-        <h3>live-coding</h3>
-        <p>No description</p>
-    </div>
-    <span class="star">⭐ 0</span>
-</div>
-    </section>    
-<!-- <section id="Bookmarks" class="hidden">
-    <h2>Favoris (<span id="count">0</span>)</h2>
-    <div id="listBoomarks"></div>  -->
+    <section id="errorStatut" class="hidden">
+    
+ </section> 
+ <section id="resultProfil"></section> 
+  
+<section class="repo" id="RepositoriesProfil">
+   
+</section>
+       
+<section id="BookmarksList" class="hidden">
+    <h2>Favoris (<span id="bookmarkCount">0</span>)</h2>
+    <div id="listBoomarks"></div> 
 
 
 </section> 
+<script src="app.js"></script>
 </body>
 </html>
