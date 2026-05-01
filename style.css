@@ -275,3 +275,69 @@ h1 {
 .repo-bottom a:hover {
   text-decoration: underline;
 }
+
+#BookmarksList {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: #58a6ff;
+}
+
+.card img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #30363d;
+  flex-shrink: 0;
+}
+
+.card h3 {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+  color: #e6edf3;
+}
+
+.card button {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #30363d;
+  transition: background 0.2s;
+}
+
+/* Bouton Voir profil */
+.card button:first-of-type {
+  background: #21262d;
+  color: #58a6ff;
+}
+.card button:first-of-type:hover {
+  background: #388bfd22;
+  border-color: #58a6ff;
+}
+
+/* Bouton Supprimer */
+.card button:last-of-type {
+  background: transparent;
+  color: #f85149;
+}
+.card button:last-of-type:hover {
+  background: #f8514922;
+  border-color: #f85149;
+}
