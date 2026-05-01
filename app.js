@@ -82,7 +82,6 @@ function displayProfil(user, respo) {
 
   profilContainer.appendChild(card);
 
-  // ✅ Show/hide sections correctly
   profilContainer.style.display = "block";
   RepositoriesProfil.style.display = "block";
   BookmarksList.style.display = "none";
@@ -90,11 +89,11 @@ function displayProfil(user, respo) {
   errorStatut.style.display = "none";
   welcomeState.style.display = "none";
 
-  // ✅ Sync bookmark button state
+  
   const isAlreadyBookmarked = state.bookmarks.some(u => u.id === user.id);
   addBtnBookmarks(isAlreadyBookmarked);
 
-  // ✅ Fixed ID
+  
   document.getElementById('bookmarkBtn').addEventListener('click', toggleBookmarks);
 
   let respoContainer = document.getElementById("RepositoriesProfil");
@@ -175,7 +174,7 @@ async function loaderUser(userName) {
 }
 
 function loaderBookmarks() {
-  let data = localStorage.getItem("githubBookmarks"); // ✅ Fixed key
+  let data = localStorage.getItem("githubBookmarks"); 
   if (data) {
     state.bookmarks = JSON.parse(data);
   } else {
@@ -184,13 +183,13 @@ function loaderBookmarks() {
 }
 
 function saveBookmarks() {
-  localStorage.setItem("githubBookmarks", JSON.stringify(state.bookmarks)); // ✅ Fixed key
+  localStorage.setItem("githubBookmarks", JSON.stringify(state.bookmarks)); 
 }
 
 function toggleBookmarks() {
   if (!state.currentUser) return;
 
-  let index = state.bookmarks.findIndex(u => u.id === state.currentUser.id); // ✅ Fixed typo
+  let index = state.bookmarks.findIndex(u => u.id === state.currentUser.id); 
   if (index === -1) {
     state.bookmarks.push(state.currentUser);
     addBtnBookmarks(true);
@@ -218,3 +217,45 @@ function addBtnBookmarks(isBookmarked) {
 function addCountBookmarks() {
   document.getElementById("bookmarkCount").textContent = state.bookmarks.length;
 }
+
+function displayBookmarks() {
+  const bookmarkContainer = document.getElementById("BookmarksList");
+  bookmarkContainer.innerHTML = "";
+
+  if (state.bookmarks.length === 0) {
+    bookmarkContainer.innerHTML = "<p>Aucun favori 😢</p>";
+    return;
+  }
+
+  state.bookmarks.forEach(user => {
+    bookmarkContainer.innerHTML += `
+      <div class="card">
+        <img src="${user.avatar_url}" width="80">
+        <h3>${user.login}</h3>
+        <button onclick="loaderUser('${user.login}')">👁️ Voir profil</button>
+        <button onclick="removeBookmarks(${user.id})">🗑️ Supprimer</button>
+      </div>
+    `;
+  });
+}
+
+function toggleBookmarksView() {
+  state.isViewingBookmarks = !state.isViewingBookmarks;
+
+  if (state.isViewingBookmarks) {
+    BookmarksList.style.display = "block";
+    welcomeState.style.display = "none";
+    resultProfil.style.display = "none";
+    RepositoriesProfil.style.display = "none";
+    laodingStatut.style.display = "none";
+    errorStatut.style.display = "none";
+    displayBookmarks();
+  } else {
+    BookmarksList.style.display = "none";
+    showWelcome();
+  }
+}
+
+document.getElementById('toggleBookmarks').addEventListener('click', toggleBookmarksView);
+
+addCountBookmarks();
