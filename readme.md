@@ -15,4 +15,12 @@ Application frontend développée en JavaScript permettant de rechercher des pro
   - Nombre de repositories
   - Lien vers GitHub
 
+  ### 📦 Repositories
+- Affichage des 5 repos les plus populaires
+- Informations :
+  - Nom
+  - Description
+  - Langage
+  - Nombre de stars ⭐
+
 
