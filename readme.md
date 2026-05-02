@@ -22,5 +22,13 @@ Application frontend développée en JavaScript permettant de rechercher des pro
   - Description
   - Langage
   - Nombre de stars ⭐
+  
+  ### ⭐ Favoris
+- Ajouter un profil aux favoris
+- Supprimer un profil des favoris
+- Afficher la liste des favoris
+- Cliquer sur un favori pour recharger son profil
+- Compteur dynamique des favoris
+- Sauvegarde persistante avec localStorage
 
 
