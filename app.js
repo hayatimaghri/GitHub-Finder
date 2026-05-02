@@ -17,11 +17,7 @@ let bookmarkCount = document.getElementById("bookmarkCount");
 
 async function fetchUser(userName) {
   try {
-    let response = await fetch(`https://api.github.com/users/${userName}`, {
-      headers: {
-        'Authorization': `token ${env.Token}`
-      }
-    });
+    let response = await fetch(`https://api.github.com/users/${userName}`);
     if (!response.ok) {
       throw new Error("User not found ❌");
     }
@@ -35,11 +31,7 @@ async function fetchUser(userName) {
 
 async function fetchRespo(userName) {
   try {
-    let res = await fetch(`https://api.github.com/users/${userName}/repos?sort=stars&per_page=5`, {
-      headers: {
-        'Authorization': `token ${env.Token}`
-      }
-    });
+    let res = await fetch(`https://api.github.com/users/${userName}/repos?sort=stars&per_page=5`,);
     if (!res.ok) {
       throw new Error("repos not found");
     }
@@ -165,6 +157,10 @@ async function loaderUser(userName) {
   try {
     showLoading();
     let user = await fetchUser(userName);
+    if (!user) {
+      showError("Utilisateur non trouvé ❌");
+      return;
+    }
     let respo = await fetchRespo(userName);
     displayProfil(user, respo);
     addCountBookmarks();
@@ -258,4 +254,5 @@ function toggleBookmarksView() {
 
 document.getElementById('toggleBookmarks').addEventListener('click', toggleBookmarksView);
 
+loaderBookmarks();
 addCountBookmarks();
